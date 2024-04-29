@@ -39,7 +39,8 @@ namespace AzureBlobStorageAssessment
             else
             {
                 Console.WriteLine($"Container {containerName} was not found. Creating new container...");
-                blobServiceClient.CreateBlobContainerAsync(containerName);
+                blobServiceClient.CreateBlobContainer(containerName);
+                containerClient = blobServiceClient.GetBlobContainerClient(containerName);
             }
             #endregion
             // Ascii art header for fun :)
